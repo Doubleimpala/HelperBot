@@ -5,7 +5,7 @@ module.exports={
     const content = args.join(" ")
     if(!content) return message.reply('Please say something for me to repeat!'), message.react('❌')
 
-    message.channel.send('**' + message.author.username +' says: **' + content)
+    message.channel.send('**' + message.author.username +' says: **' + (' ') + content)
     message.react('✅');
   }
 }

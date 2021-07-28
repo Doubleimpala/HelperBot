@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js')
 const { prefix } = require('../config')
 
 module.exports={
-  name: 'help',
+  name: 'cmds',
   description: 'Shows all the commands of the bot.',
   async excecute(message, args, client){
     

@@ -1,12 +1,11 @@
 module.exports={
   name: 'leave',
-  description: 'The bot leaves your voice channel!',
+  description: 'The bot stops playing and leaves your voice channel!',
   async excecute(message){
-    message.react('✅');
-    if(message.member.voice.channel){
-      await message.member.voice.channel.leave();
-    } else{
-      await voice.channel.leave();
-    }
+    const voiceChannel = message.member.voice.channel;
+
+    if(!voiceChannel) return message.channel.send("You need to be in a voice channel to stop the music.");
+    await voiceChannel.leave();
+    await message.channel.send('Leaving channel. Good bye ol\' friend!')
   }
 }

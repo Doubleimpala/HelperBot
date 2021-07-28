@@ -3,6 +3,7 @@ require('dotenv').config()
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
+const db = require("quick.db")
 
 client.commands = new Discord.Collection();
 
@@ -30,23 +31,6 @@ for (file of command_files) {
     continue
   }
 }
-
-//Prefix help scanners:
-
-client.on('message', message => {
-	if (message.content === 'help') {
-		message.channel.send('My prefix is > and try >help for all the commands.');
-	}
-});
-
-client.on('message', message => {
-	if (message.content === 'prefix') {
-		message.channel.send('My prefix is > and try >help for all the commands.');
-	}
-});
-
-
-//End Prefix help scanners.
 
 const { prefix } = require('./config')
 const server = require('./server.js')
